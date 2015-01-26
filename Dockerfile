@@ -16,8 +16,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
 
 # Install packages.
-RUN apt-get update
-RUN apt-get install -y build-essential curl libreadline-dev libncurses5-dev libpcre3-dev libssl-dev lua5.2 luarocks nano perl wget
+RUN apt-get update && apt-get install -y build-essential curl libreadline-dev libncurses5-dev libpcre3-dev libssl-dev lua5.2 luarocks nano perl lua-filesystem lua-socket wget && apt-get clean
 
 # Compile openresty from source.
 RUN \
